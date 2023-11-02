@@ -1,5 +1,5 @@
-# panbox-firmware
+# Panbox MK II Firmware
 Circuit Python code for my custom gamepad
 
-Code included is for my Panbox MK II
+## Code included is for my Panbox MK II
 Keys included for WASD, and U, I, O, J, K, and L
