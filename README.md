@@ -1,4 +1,4 @@
-# Panbox MK II Firmware
+# Panbox MK II Firmware and Design Files
 Circuit Python code for my custom gamepad
 
 #### Code included is for my Panbox MK II
