@@ -1,0 +1,89 @@
+points:
+  key:
+    padding: U
+  zones:
+    dpad:
+      anchor:
+        shift: [100, -100]
+      rotate: -20
+      key:
+          stagger: 0
+          splay: -5
+          spread: 21
+      columns:
+        ring:
+        middle:
+        index:
+    thumb:
+      anchor:
+        ref: dpad_index
+        rotate: -25
+        shift: [30, -40]
+    face:
+      anchor:
+        ref: dpad_index
+        shift: [70, 20]
+        rotate: 65
+      rows:
+        top:
+          stagger: 2
+          splay: -0
+          spread: 20
+        bottom:
+      columns:
+        index:
+        middle:
+        ring:
+
+outlines:
+  keys:
+    - what: rectangle
+      where: true
+      bound: false
+      asym: both
+      size: [14,14]
+  raw:
+    - what: rectangle
+      where: true
+      bound: true
+      asym: both
+      size: [U+5, U+5]
+      corner: 3
+    - what: rectangle
+      where: true
+      asym: source
+      size: U
+      operation: subtract
+  pcb_perimeter_raw:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: dpad_ring
+          shift: [-40,10]
+        - ref: dpad_ring
+          shift: [20, -95]
+        - ref: dpad_ring
+          shift: [195,-10]
+        - ref: dpad_ring
+          shift: [135, 90]
+      fillet: 30
+  combo:
+    - name: pcb_perimeter_raw
+    - operation: add
+      name: keys
+  
+pcbs:
+  main:
+    outlines:
+      main:
+        outline: combo
+    footprints:
+      mx_keys:
+        what: mx
+        where: true
+        params:
+          keycaps: true
+          reverse: false
+          hotswap: false
+          from: "{{column_net}}"
+          to: "{{colrow}}"
